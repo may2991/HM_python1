@@ -7,7 +7,7 @@ with open("for_1.txt", "w") as f_1:
         str = input(f"введите {k}-ю строку. Об окончании ввода данных свидетельствует пустая строка.\n")
         if not str:
             break
-        f_1.writelines(str)
+        f_1.writelines(str + '\n')
         f_1.writelines('\n')
         k += 1
 
