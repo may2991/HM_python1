@@ -8,7 +8,6 @@ with open("for_1.txt", "w") as f_1:
         if not str:
             break
         f_1.writelines(str + '\n')
-        f_1.writelines('\n')
         k += 1
 
 
