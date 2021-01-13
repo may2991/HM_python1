@@ -7,19 +7,15 @@
 # При этом английские числительные должны заменяться на русские.
 # Новый блок строк должен записываться в новый текстовый файл.
 
+
+dict_replace = dict(One='Один', Two='Два', Three="Три", Four ='Четыре')
 with open("for_4_old.txt", "r") as f_old, open("for_4_new.txt", "w") as f_new:
     content = f_old.readlines()
+    print(content)
     for str in content:
         list_buf = str.split()
-        if list_buf[2] == '1':
-            list_buf[0] = "Один"
-        elif list_buf[2] == '2':
-            list_buf[0] = "Два"
-        elif list_buf[2] == '3':
-            list_buf[0] = "Три"
-        elif list_buf[2] == '4':
-            list_buf[0] = "Четыре"
-        f_new.writelines(list_buf)
-        f_new.writelines("\n")
+        list_buf[0] = dict_replace.get(list_buf[0])
+        str_buf = " ".join(list_buf)
+        f_new.writelines(str_buf + "\n")
         print(list_buf)
-
+        
