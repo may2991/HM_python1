@@ -14,4 +14,3 @@ with open("for_3.txt", "r") as f_1:
         if oklad < 20000:
             print (str.split()[0])
     print(f"средняя величина дохода сотрудников {sum / num_of_man}")
-    
