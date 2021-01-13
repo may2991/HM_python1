@@ -9,8 +9,10 @@ def fact(n):
     if n < 2:
         yield 1
     else:
+        f = 1
         for el in range(n):
-            yield el * (el + 1)
+            f *= (el + 1)
+            yield f
 
 
 def correct_input():
@@ -28,5 +30,6 @@ def correct_input():
 
 
 n = correct_input()
+f = 1
 for el in fact(n):
-    print(el)
+   print(el)
