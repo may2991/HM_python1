@@ -6,4 +6,3 @@ from sys import argv
 
 script, work_in_h, stavka_in_h, premia = argv
 print(f"заработная плата составляет:{(float(work_in_h) * float(stavka_in_h)) + float(premia)}")
-
