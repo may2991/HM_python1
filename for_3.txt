@@ -1,6 +1,0 @@
-Ivanov	50000
-Petrov	100000
-Sidorov 5000
-Fedorov	1000
-Mayorov	100500
-Smith	20000
