@@ -9,9 +9,10 @@
 # Пример словаря:
 # {“Информатика”: 170, “Физика”: 40, “Физкультура”: 30}
 
-def find_lesson (list_1_lesson):
+def find_lesson (str_lesson):
     '''функция ищет в списке количество пар и суммирует их общеее количество'''
     num_lesson = 0
+    list_1_lesson = str_lesson.split()
     for  el in list_1_lesson:
         if el.find("(лаб)") > -1:
             num_lesson += int(el[0:el.find("(лаб)")])
@@ -22,24 +23,10 @@ def find_lesson (list_1_lesson):
     return num_lesson
 
 
-def find_key (list_1_lesson):
-    ''' функция ищет в списке название предметов, если название составное - склеивает название в одну строку'''
-    key = ""
-    for  index, el in enumerate(list_1_lesson):
-        if el.find(":") > -1:
-            if index == 0:
-                key = el[0:el.find(":")]
-            else:
-                for part_of_lesson in range(index):
-                    key = key + list_1_lesson[part_of_lesson] + " "
-                key = key + el[0:el.find(":")]
-    return key
-
-
 my_dict ={}
 with open("for_6.txt", "r") as f_1:
         content = f_1.readlines()
         for str in content:
-            buf_list = str.split()
-            my_dict.update({find_key(buf_list): find_lesson(buf_list)})
+            buf_list = str.split(":")
+            my_dict.update({buf_list[0]: find_lesson(buf_list[1])})
 print(my_dict)
