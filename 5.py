@@ -10,4 +10,4 @@ def func_umn(el, next_el):
     return el * next_el
 
 
-print(reduce(func_umn, [el for el in range(100, 1001) if el % 2 == 0]))
+print(reduce(func_umn, [el for el in range(100, 1001, 2)]))
